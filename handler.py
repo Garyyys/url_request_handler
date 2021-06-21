@@ -3,10 +3,10 @@ import requests
 import decorators
 
 
-@decorators.test_time
 @decorators.logging_data
+@decorators.test_time
 def make_request(url):
-    """ Функция обработки get запроса."""
+    """ Функция обработки get запроса"""
     response = requests.get(f'https://{url}')
     return response.text
 

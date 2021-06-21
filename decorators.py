@@ -6,16 +6,11 @@ from functools import wraps
 
 def logging_data(func):
     """ Декоратор записывает входные и выходные данные функции. """
-    input_data = []
-    output_data = []
-
     @wraps(func)
     def wrapper(*args):
+        print(f"Входные параметры функции: {args}")
         result = func(*args)
-        input_data.append(*args)
-        output_data.append(result)
-        print(f'Входные данные функции - {func.__name__}: {input_data}')
-        print(f'Везультат функции - {func.__name__}: {output_data}\n')
+        print(f'Везультат функции - {func.__name__}: {result}')
     return wrapper
 
 
